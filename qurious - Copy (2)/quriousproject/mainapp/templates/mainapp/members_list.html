@@ -1,0 +1,144 @@
+
+
+{% extends 'mainapp/shared/base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+
+
+
+            <div class="row " >
+                <div class="col-10 offset-2 shadow  bg-light  ">
+
+                 <nav class="navbar navbar-expand-sm navbar-light bg-light">
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                       
+                    </form>
+                        
+                        <div class="collapse navbar-collapse " id="collapsibleNavId" >
+                            <ul class="navbar-nav mr-auto mt-2 mt-lg-0 ">
+                                <li class="nav-item active">
+                                    <a href="{% url 'mainapp_addmember' %}" class="btn  btn-s mr-2" role="button" aria-pressed="true" style="background-color:#29CC97;color: white;">+ Add</a>
+    
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="btn  btn-l mr-2 " role="button" aria-pressed="true" style="background-color:#FF3332;color: white;width:100px ;"> Deactive</a>
+    
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="btn  btn-l mr-5 " role="button" aria-pressed="true" style="background-color:#FEC400;color: white;width:100px ;"> Reactive</a>
+    
+                                </li>
+
+                                <li>
+
+                                </li>
+                                
+                                <li >
+                                    <a class="nav-link " href="#" style="margin-left:280px ;">Sort</a>
+                                </li>
+                                <li>
+                                    <a class="nav-link" href="#">Filter</a>
+                                </li>
+                                <li>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#" >Rows per page</a>
+            
+                                        <a class="dropdown-item" href="#">row1</a>
+                                       
+                                        <a class="dropdown-item" href="#">row2</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a class="nav-link" href="#">1 to 10 of 1024</a>
+                                </li>
+                                
+                            </ul>
+                            
+                        </div>
+                       
+                       
+                        
+                    </nav>
+
+
+
+
+                    <table class="table table-stripped text-center">
+                        
+                        <tr>
+                            <th><input type="checkbox" name="" id=""></th>
+                            <th>Member ID</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Address</th>
+                            <th>DOB</th>
+                            <th>Email</th>
+                            <th>City</th>
+                            <th>Ph.No</th>
+                            <th>Passport.No</th>
+                            <th>Passport Expiry Date</th>
+                            <th>EDIT/DELETE</th>
+                            
+                        </tr>
+                        
+                        {% for todo in todos %}
+                            <tr>
+                                <td>{{ form1.id }}</td>
+                                <td>{{ form1.first_name }}</td>
+                                <td>{{ form1.last_name }}</td>
+                                <td>{{ form2.address }}</td>
+                                <td>{{ form2.date_of_birth }}</td>
+                                <td>{{ form2.city}}</td>
+                                <td>{{ form1.phone}}</td>
+                                <td>{{ form2.passportnumber}}</td>
+                                <td>{{ form2.passport_expiry_date}}</td>
+                                <td>
+                                    
+
+
+                                        <ul>
+                                        <li class="nav-item dropdown">
+                                            <a href="{% url 'accounts_menu_todo' id=members.id %} ">
+                                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                                            </a>
+                                            <!-- <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a> -->
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="{% url 'mainapp_edit' %}">Edit</a>
+
+                                                <a class="dropdown-item" href="#">Deactive</a>
+                                               
+                                                <a class="dropdown-item " href="#">Reactive</a>
+                                            </div>
+                                        </li>
+                                        </ul>
+
+                                    
+                                </td>
+                                <!-- <td> -->
+                                    <!-- <a href="{% url 'accounts_update_todo' id=members.id %} " class="btn btn-warning rounded">EDIT</a> -->
+                                    <!-- <a href="{% url 'accounts_delete_todo' id=members.id %}" class="btn btn-danger rounded">DELETE</a> -->
+                                    <!-- here todo_id is from model and id is from url -->
+                                <!-- </td> -->
+                                <hr>
+                            </tr>
+                        {% endfor %}
+                            
+                        
+                            
+                    </table>
+
+                </div>
+            </div>
+            
+   
+
+
+
+</div>
+    
+{% endblock content %}
+    

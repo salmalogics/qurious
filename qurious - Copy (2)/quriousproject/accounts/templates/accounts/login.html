@@ -1,0 +1,62 @@
+{% extends 'accounts/shared/base.html' %}
+
+{% load static %}
+  
+
+{% block content %}
+
+
+
+<img src="{%static 'images/logo.png'%}" id="logo" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="logo">
+
+<form action="" method="GET">
+    <div class="container " style="padding-top:50px ;">
+    {% csrf_token %}
+    <div class="row mr-5" >
+        <div class="col-3 offset-5 shadow rounded  bg-light" >
+            <div>
+                <br>
+                <br>
+            </div>
+
+            <div class="form-group">
+                <h2>Login</h2>
+                <label for="" >please login to your account.</label>
+            </div>
+
+            <br>
+
+            <div class="form-group">
+                <label for="" >Username</label>
+                <input type="text"name="username" placeholder="admin99@ttclub" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="" >Password</label>
+                <input type="password"name="password" placeholder="Password" class="form-control">
+            </div>
+            <div class="form-group">
+                <a href="#"style="color: #006B66;" >Forget Password?</a>
+            </div>
+            <div class="form-group">
+                <a href="{% url 'mainapp_members_list' %}" class="btn  btn-l form-control" role="button" aria-pressed="true" style="background-color: #006B66;color: white;">Login</a>
+                
+            </div>
+            <br>
+            <div>
+                <br>
+            </div>
+            
+            {% if error %}
+            <hr>
+            <p class="alert alert-forestgreen">{{error}}</p>
+                
+            {% endif %}
+                
+                </div>
+        </form>  
+        </div>
+    </div>
+        
+{% endblock content %}
+
+    

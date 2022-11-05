@@ -1,0 +1,18 @@
+#bg{
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 1900px 920px;
+    background-attachment: fixed;
+}
+/* #logohome{
+    border-radius: 1px;
+    height: 400px;
+} */
+#logo{
+    height: 50px; 
+    width: 50px;
+}
+#logo2{
+    height: 50px; 
+    width: 50px;
+}
